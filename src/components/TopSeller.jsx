@@ -5,7 +5,7 @@ const TopSeller = () => {
   const [topSellers, setTopSellers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  const backendUrl = "https://mern-ecome.onrender.com" || "http://localhost:4000";
 
   useEffect(() => {
     fetchTopSellers();

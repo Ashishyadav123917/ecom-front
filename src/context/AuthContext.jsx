@@ -11,7 +11,9 @@ const AuthContextProvider = (props) => {
   const [loading, setLoading] = useState(true);
   
   const navigate = useNavigate();
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  // const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+
+    const backendUrl = "https://mern-ecome.onrender.com" || "http://localhost:4000";
 
   // Load token from localStorage when app starts
   useEffect(() => {

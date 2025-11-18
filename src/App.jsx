@@ -65,7 +65,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-export const backendUrl = "http://localhost:4000";
+export const backendUrl =  "https://mern-ecome.onrender.com"||  "http://localhost:4000";
 
 const App = () => {
   return (

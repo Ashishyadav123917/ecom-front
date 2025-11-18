@@ -20,7 +20,9 @@ const ShopContextProvider = (props) => {
   const currency = "RS";
   const delivery_fee = 10;
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  // const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+
+    const backendUrl = "https://mern-ecome.onrender.com"|| "http://localhost:4000";
 
   // Fetch products
   const fetchProducts = async () => {
