@@ -1,7 +1,7 @@
-import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext();
 
@@ -13,8 +13,8 @@ const AuthContextProvider = (props) => {
   const navigate = useNavigate();
   // const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
-    const backendUrl = "https://mern-ecome.onrender.com" || "http://localhost:4000";
-
+    //const backendUrl = "https://mern-ecome.onrender.com" || "http://localhost:4000";
+      const backendUrl = "http://localhost:4000";
   // Load token from localStorage when app starts
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
@@ -65,11 +65,12 @@ console.log("this is the response  of login" ,   response);
   };
 
   // Register function
-  const register = async (name, email, password) => {
+  const register = async (name, email, mobile, password) => {
     try {
       const response = await axios.post(`${backendUrl}/api/user/register`, {
         name,
         email,
+        mobile,
         password,
       });
 
@@ -79,8 +80,6 @@ console.log("this is the response  of login" ,   response);
 
         localStorage.setItem("token", newToken);
         localStorage.setItem("userId", userId);
-
-
 
         setToken(newToken);
         

@@ -139,7 +139,7 @@
 
 
 
-import React, { useState, useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
@@ -152,8 +152,6 @@ const Login = () => {
   
   const navigate = useNavigate();
   const { token, login, register } = useContext(AuthContext);
-
-
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -237,13 +235,23 @@ const Login = () => {
         )}
       </div>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="px-8 py-2 mt-4 font-light text-white bg-black disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        {loading ? "Processing..." : currentState === "Login" ? "Sign In" : "Sign Up"}
-      </button>
+{currentState === "Login" ? (
+  <button
+    type="submit"
+    disabled={loading}
+    className="px-8 py-2 mt-4 font-light text-white bg-black disabled:bg-gray-400 disabled:cursor-not-allowed"
+  >
+    {loading ? "Processing..." : "Sign In"}
+  </button>
+) : (
+  <button
+    type="button"
+    onClick={() => navigate("/newuser")}
+    className="px-8 py-2 mt-4 font-light text-white bg-black"
+  >
+    Sign Up
+  </button>
+)}
     </form>
   );
 };

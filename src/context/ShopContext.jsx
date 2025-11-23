@@ -1,8 +1,8 @@
 
-import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const ShopContext = createContext();
 
@@ -22,8 +22,8 @@ const ShopContextProvider = (props) => {
 
   // const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
-    const backendUrl = "https://mern-ecome.onrender.com"|| "http://localhost:4000";
-
+    //const backendUrl = "https://mern-ecome.onrender.com"|| "http://localhost:4000";
+    const backendUrl = "http://localhost:4000";
   // Fetch products
   const fetchProducts = async () => {
     try {

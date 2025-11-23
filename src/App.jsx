@@ -42,26 +42,25 @@
 
 
 
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Collection from './pages/Collection'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Product from './pages/Product'
-import Cart from './pages/Cart'
-import Login from './pages/Login'
-import PlaceOrder from './pages/PlaceOrder'
-import Orders from './pages/Orders'
-import NavBar from './components/NavBar'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Footer from './components/Footer'
+import NavBar from './components/NavBar'
 import SearchBar from './components/SearchBar'
-import Category from './pages/Category'
-
+import About from './pages/About'
 import AddressManagement from './pages/AddressManagement'
-
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Cart from './pages/Cart'
+import Category from './pages/Category'
+import Collection from './pages/Collection'
+import Contact from './pages/Contact'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import NewUser from './pages/NewUser'
+import Orders from './pages/Orders'
+import PlaceOrder from './pages/PlaceOrder'
+import Product from './pages/Product'
+import Profile from "./pages/Profile"
 
 
 
@@ -85,6 +84,8 @@ const App = () => {
         <Route path='/orders' element={<Orders />} />
         <Route path='/category' element={<Category />} />
         <Route path='/AddressManagement' element={<AddressManagement />} />
+        <Route path='/newuser' element={<NewUser />} />
+<Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>
